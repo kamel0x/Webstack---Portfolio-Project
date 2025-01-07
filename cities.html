@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore Egypt</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .sidebar {
+      width: 100%;
+      background-color: #333;
+      color: white;
+      padding: 20px;
+      height: auto;
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+    }
+
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .sidebar ul li {
+      margin: 15px 0;
+    }
+
+    .sidebar ul li a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .sidebar ul li a:hover {
+      background-color: #575757;
+    }
+
+    .content {
+      margin: 0;
+      width: 90%;
+      padding: 20px;
+    }
+
+    .city {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+      transition: transform 0.3s ease;
+    }
+
+    .city:hover {
+      transform: scale(1.05);
+    }
+
+    .city h3 {
+      color: #1e73be;
+      margin-bottom: 10px;
+    }
+
+    .city img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .restaurant, .hotel {
+      background-color: #f4f4f4;
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 8px;
+    }
+
+    .restaurant h4, .hotel h4 {
+      color: #1e73be;
+      margin-bottom: 10px;
+    }
+
+    .ratings {
+      color: #f39c12;
+    }
+
+    .reviews {
+      font-size: 0.9rem;
+      color: #5e5e5e;
+    }
+
+    .city, .restaurant, .hotel {
+      border-left: 5px solid #ff69b4;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <h2>Menu</h2>
+      <ul>
+        <li><a href="/cities">Home</a></li>
+        <li><a href="/favorites">Favorites</a></li>
+        <li><a href="/developer.html">About Developer</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <header>
+        <h1>Explore Egypt</h1>
+        <p>Discover the most famous cities, landmarks, restaurants, and hotels in Egypt.</p>
+      </header>
+
+      <!-- القاهرة -->
+      <div class="city">
+        <h3>Cairo</h3>
+        <img src="https://egypttimetravel.com/wp-content/uploads/2020/06/Cairo-Egypt.jpg" alt="Cairo">
+        <p>Explore the heart of Egypt with its iconic landmarks like the Pyramids and the Nile River.</p>
+        <!-- مطاعم -->
+        <div class="restaurant">
+          <h4>Abdel Wahab</h4>
+          <p>Traditional Egyptian food with an authentic atmosphere.</p>
+          <p class="ratings">⭐⭐⭐⭐⭐</p>
+          <p class="reviews">"Amazing food, great service, and a must-visit spot!"</p>
+        </div>
+        <div class="restaurant">
+          <h4>Zooba</h4>
+          <p>Modern Egyptian street food in a trendy setting.</p>
+          <p class="ratings">⭐⭐⭐⭐</p>
+          <p class="reviews">"Tasty food with a modern twist!"</p>
+        </div>
+        <!-- فنادق -->
+        <div class="hotel">
+          <h4>Hotel Cairo Marriott</h4>
+          <p>Overlooking the Nile River, this hotel offers luxurious accommodations.</p>
+          <p class="ratings">⭐⭐⭐⭐⭐</p>
+          <p class="reviews">"Perfect location and excellent service!"</p>
+        </div>
+        <div class="hotel">
+          <h4>Ramses Hilton</h4>
+          <p>Located in the heart of Cairo, with a rooftop restaurant offering spectacular views.</p>
+          <p class="ratings">⭐⭐⭐⭐</p>
+          <p class="reviews">"Great experience and good location!"</p>
+        </div>
+      </div>
+
+      <!-- الإسكندرية -->
+      <div class="city">
+        <h3>Alexandria</h3>
+        <img src="https://static.srpcdigital.com/styles/1037xauto/public/2022/10/15/1665844870229742600.jpg" alt="Alexandria">
+        <p>Enjoy the Mediterranean breeze and visit the Qaitbay Citadel.</p>
+        <!-- مطاعم -->
+        <div class="restaurant">
+          <h4>Fishawi’s</h4>
+          <p>Enjoy fresh seafood right on the Mediterranean coast.</p>
+          <p class="ratings">⭐⭐⭐⭐</p>
+          <p class="reviews">"Great place to enjoy a seafood feast by the sea!"</p>
+        </div>
+        <div class="restaurant">
+          <h4>Seafood Market</h4>
+          <p>Fresh seafood right from the market, served in a cozy restaurant.</p>
+          <p class="ratings">⭐⭐⭐⭐⭐</p>
+          <p class="reviews">"Best seafood I’ve ever had!"</p>
+        </div>
+        <!-- فنادق -->
+        <div class="hotel">
+          <h4>Four Seasons Hotel Alexandria</h4>
+          <p>Luxury hotel with stunning views of the Mediterranean.</p>
+          <p class="ratings">⭐⭐⭐⭐⭐</p>
+          <p class="reviews">"Luxury at its best with breathtaking views!"</p>
+        </div>
+        <div class="hotel">
+          <h4>Helnan Palestine Hotel</h4>
+          <p>Situated by the sea with panoramic views and a relaxing atmosphere.</p>
+          <p class="ratings">⭐⭐⭐⭐</p>
+          <p class="reviews">"Nice hotel with a great location, near beaches!"</p>
+        </div>
+      </div>
+
+      <!-- الأقصر -->
+      <div class="city">
+        <h3>Luxor</h3>
+        <img src="https://middle-east-online.com/sites/default/files/styles/home_special_coverage_1920xauto/public/2021-01/haggag.jpg?itok=aY8UJUrQ" alt="Luxor">
+        <p>Visit Luxor and explore the Valley of the Kings and Karnak Temple.</p>
+        <!-- مطاعم -->
+        <div class="restaurant">
+          <h4>Luxor Restaurant</h4>
+          <p>Offering a range of Egyptian and international dishes.</p>
+          <p class="ratings">⭐⭐⭐⭐</p>
+          <p class="reviews">"Delicious food with great views of the Nile!"</p>
+        </div>
+        <div class="restaurant">
+          <h4>Maxim's Restaurant</h4>
+          <p>Known for its Egyptian and Mediterranean food, located near the Nile.</p>
+          <p class="ratings">⭐⭐⭐⭐⭐</p>
+          <p class="reviews">"Great food and excellent service!"</p>
+        </div>
+        <!-- فنادق -->
+        <div class="hotel">
+          <h4>Sonesta St. George Hotel</h4>
+          <p>Elegant hotel with a perfect location near Luxor's temples.</p>
+          <p class="ratings">⭐⭐</p>
+          <p class="reviews">"A luxurious stay with incredible views!"</p>
+        </div>
+        <div class="hotel">
+          <h4>Steigenberger Nile Palace</h4>
+          <p>Offers beautiful Nile views and five-star luxury accommodations.</p>
+          <p class="ratings">⭐⭐⭐</p>
+          <p class="reviews">"Exceptional hotel with amazing amenities!"</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
