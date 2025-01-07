@@ -1,25 +1,42 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Egyptian tourism website</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-  <header>
-    <h1>The most important tourist attractions in Egypt</h1>
-    <nav>
-      <a href="cities.html">Tourist cities</a>
-      <a href="login.html">Login</a>
-    </nav>
-  </header>
-  <main>
-    <section class="intro">
-      <h2>Welcome to our website</h2>
-      <p>Discover the best tourist destinations in Egypt!</p>
-    </section>
-  </main>
-  <script src="js/script.js"></script>
-</body>
-</html>
+<!-- Favorites page -->
+<div class="favorites-container">
+  <h2>Your Favorites</h2>
+  <ul id="favorites-list">
+    <!-- Favorite places will be added here -->
+  </ul>
+</div>
+
+<!-- Button to add a place to favorites -->
+<button onclick="addToFavorites('Cairo')">Add Cairo to Favorites</button>
+
+<script>
+  // Fetch favorite places from the server
+  fetch('/favorites')
+    .then(response => response.json())
+    .then(favorites => {
+      const favoritesList = document.getElementById('favorites-list');
+      favoritesList.innerHTML = '';
+      favorites.forEach(favorite => {
+        const li = document.createElement('li');
+        li.textContent = favorite;
+        favoritesList.appendChild(li);
+      });
+    });
+
+  // Function to add a place to favorites
+  function addToFavorites(place) {
+    fetch('/favorites', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ place })
+    })
+    .then(response => response.json())
+    .then(data => {
+      alert(data.message);
+      location.reload(); // Reload the page to show updates
+    })
+    .catch(error => console.error('Error:', error));
+  }
+</script>
