@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Favorites</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Your Favorites</h1>
+  </header>
+  <main>
+    <ul id="favorites-list">
+      <!-- Favorite places will be added here -->
+    </ul>
+    <button onclick="addToFavorites('Cairo')">Add Cairo to Favorites</button>
+  </main>
+
+  <script>
+    // Fetch favorite places from the server
+    fetch('/favorites')
+      .then(response => response.json())
+      .then(favorites => {
+        const favoritesList = document.getElementById('favorites-list');
+        favoritesList.innerHTML = '';
+        favorites.forEach(favorite => {
+          const li = document.createElement('li');
+          li.textContent = favorite;
+          favoritesList.appendChild(li);
+        });
+      });
+
+    // Function to add a place to favorites
+    function addToFavorites(place) {
+      fetch('/favorites', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ place })
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.message);
+        location.reload(); // Reload the page to show updates
+      })
+      .catch(error => console.error('Error:', error));
+    }
+  </script>
+</body>
+</html>
